@@ -1,0 +1,10 @@
+{
+  "name": "나의 복지 주머니",
+  "short_name": "복지 주머니",
+  "description": "2026·2027 기초연금과 건강보험료 모의계산기",
+  "lang": "ko-KR",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbfaf5",
+  "theme_color": "#1a8e82"
+}
