@@ -23,3 +23,8 @@
   .creator-strip{grid-template-columns:auto minmax(0,1fr);padding:12px 13px;margin-bottom:16px}.creator-badge{display:none}.creator-strip small{font-size:11px}.creator-monogram{width:34px;height:34px}
   .result-card{padding-bottom:55px}.result-card::before{font-size:42px;top:50%;color:rgba(15,118,110,.04)}.result-card::after{left:17px;right:17px;bottom:15px;font-size:10.5px}
 }
+
+
+/* Optional supporter card — shown only after a calculation result */
+.support-card{margin-top:12px;padding:14px 15px;border:1px solid #eadfca;border-radius:14px;background:linear-gradient(135deg,#fffaf0,#fffdf8);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}.support-card-copy{display:flex;flex-direction:column;gap:3px;min-width:0}.support-card-label{font-size:12px;font-weight:900;color:#8b6526}.support-card-copy strong{font-size:15px;line-height:1.4;color:var(--ink)}.support-card-copy small{font-size:12px;line-height:1.5;color:var(--muted)}.support-card-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;border-radius:11px;background:#8b6526;color:#fff;text-decoration:none;font-size:13px;font-weight:900;white-space:nowrap}.support-card-link:hover{background:#6f501e}.support-card-link:focus-visible{outline:3px solid rgba(139,101,38,.22);outline-offset:2px}
+@media(max-width:620px){.support-card{grid-template-columns:1fr;padding:13px;margin-top:12px}.support-card-link{width:100%;min-height:46px}.support-card-copy strong{font-size:15px}.support-card-copy small{font-size:12px}}
