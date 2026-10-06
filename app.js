@@ -8,6 +8,8 @@ const $ = (q, root=document) => root.querySelector(q);
 const $$ = (q, root=document) => [...root.querySelectorAll(q)];
 const fmt = (v) => new Intl.NumberFormat('ko-KR').format(Math.round(Number(v)||0));
 const money = (v) => `${fmt(v)}원`;
+const BASIC_PENSION_VIDEO_URL = 'https://youtu.be/t2YnMGGPR7M?si=u6l32qhZtkXJrfMz';
+const pensionVideoCard = () => `<div class="related-video-card" role="complementary" aria-label="기초연금 관련 영상"><div class="related-video-copy"><span class="related-video-label">트렌드라디오</span><strong>내 결과가 왜 이렇게 나왔는지 영상으로 보기</strong><small>기초연금 내용을 영상으로 쉽게 이어서 확인해보세요.</small></div><a class="related-video-link" href="${BASIC_PENSION_VIDEO_URL}" target="_blank" rel="noopener noreferrer" aria-label="트렌드라디오 기초연금 영상 새 창에서 보기">▶ 유튜브에서 보기</a></div>`;
 
 function go(id){
   $$('.page').forEach(p=>p.classList.toggle('active',p.id===id));
@@ -69,7 +71,7 @@ function renderPension2026(r){
     $('#pension-result').innerHTML=`<div class="result-top"><div class="result-kicker">2026 기초연금 모의판정</div><div class="result-amount">수급 어려움</div><span class="result-pill no">${r.reason}</span></div>
       <div class="metric-list"><div class="metric"><span>예상 소득인정액</span><strong>${money(r.recognizedIncome)}</strong></div><div class="metric"><span>선정기준액</span><strong>${money(r.threshold)}</strong></div></div>
       <div class="progress"><i style="width:${pct}%"></i></div><div class="explain"><strong>계산 구성</strong><br>소득평가액 ${money(r.incomeEvaluation)} + 재산 소득환산액 ${money(r.propertyConversion)}</div>
-      <div class="result-alert">실제 판정은 행복이음 공적자료와 각종 특례·예외를 반영합니다. 경계선이면 국민연금공단 1355 또는 복지로에서 최종 확인하세요.</div>`;
+      <div class="result-alert">실제 판정은 행복이음 공적자료와 각종 특례·예외를 반영합니다. 경계선이면 국민연금공단 1355 또는 복지로에서 최종 확인하세요.</div>${pensionVideoCard()}`;
     return;
   }
   $('#pension-result').innerHTML=`<div class="result-top"><div class="result-kicker">예상 월 기초연금</div><div class="result-amount">${money(r.monthlyBenefitHousehold)} <small>${r.spouseBenefit>0?'가구 합계':'본인'}</small></div><span class="result-pill">수급 가능성 있음</span></div>
@@ -82,13 +84,13 @@ function renderPension2026(r){
     </div>
     <div class="progress"><i style="width:${pct}%"></i></div>
     <div class="explain"><strong>감액 반영</strong><br>${r.coupleReductionApplied?'부부감액 적용 · ':''}${r.linkedReductionApplied?'국민연금 연계감액 적용 · ':''}${r.reversalApplied?'소득역전방지 감액 적용':'소득역전방지 감액 없음'}</div>
-    <div class="result-alert">입력한 재산은 실제 행정 평가액과 다를 수 있습니다. 특히 주택·금융재산·부채·무료임차소득은 공적자료 확인 과정에서 차이가 날 수 있습니다.</div>`;
+    <div class="result-alert">입력한 재산은 실제 행정 평가액과 다를 수 있습니다. 특히 주택·금융재산·부채·무료임차소득은 공적자료 확인 과정에서 차이가 날 수 있습니다.</div>${pensionVideoCard()}`;
 }
 function renderPension2027(r){
   const labels={lower30:'소득 하위 30%',lower30to45:'하위 30~45%',lower45to70:'하위 45~70%'};
   $('#pension-result').innerHTML=`<div class="result-top"><div class="result-kicker">2027 정부안 미리보기</div><div class="result-amount">${money(r.householdBenefit)} <small>${r.bothReceive?'부부 합계':'1인'}</small></div><span class="result-pill">${labels[r.band]}</span></div>
     <div class="metric-list"><div class="metric"><span>정부안 기준 1인 지급액</span><strong>${money(r.baseAmount)}</strong></div><div class="metric"><span>부부감액률</span><strong>${Math.round(r.reductionRate*100)}%</strong></div><div class="metric"><span>시행 목표</span><strong>2027년 4월</strong></div></div>
-    <div class="result-alert"><strong>확정액이 아닙니다.</strong> 2027 선정기준액과 소득구간 세부 판정기준은 아직 확정 고시 전입니다. 국회 심의·법 개정 결과에 따라 달라질 수 있습니다.</div>`;
+    <div class="result-alert"><strong>확정액이 아닙니다.</strong> 2027 선정기준액과 소득구간 세부 판정기준은 아직 확정 고시 전입니다. 국회 심의·법 개정 결과에 따라 달라질 수 있습니다.</div>${pensionVideoCard()}`;
 }
 
 function toggleHealthType(){
