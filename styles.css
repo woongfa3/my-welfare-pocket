@@ -4,3 +4,22 @@
 
 .related-video-card{margin-top:16px;padding:14px 15px;border:1px solid #d9e6e2;border-radius:14px;background:#f8fcfb;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}.related-video-copy{display:flex;flex-direction:column;gap:3px;min-width:0}.related-video-label{font-size:12px;font-weight:900;color:var(--teal2)}.related-video-copy strong{font-size:15px;line-height:1.4;color:var(--ink)}.related-video-copy small{font-size:12px;line-height:1.5;color:var(--muted)}.related-video-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 13px;border-radius:11px;background:var(--navy);color:#fff;text-decoration:none;font-size:13px;font-weight:900;white-space:nowrap}.related-video-link:hover{background:var(--teal2)}.related-video-link:focus-visible{outline:3px solid rgba(26,142,130,.25);outline-offset:2px}
 @media(max-width:620px){.related-video-card{grid-template-columns:1fr;padding:13px;margin-top:14px}.related-video-link{width:100%;min-height:46px}.related-video-copy strong{font-size:15px}.related-video-copy small{font-size:12px}}
+
+
+/* Trend Radio ownership branding */
+.creator-strip{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;margin:0 0 20px;padding:13px 15px;border:1px solid #d8e7e3;border-radius:16px;background:linear-gradient(135deg,#f8fcfb,#eef8f5);box-shadow:0 8px 20px rgba(28,72,74,.04)}
+.creator-monogram{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--navy);color:#fff;font-size:13px;font-weight:950;letter-spacing:.06em}
+.creator-strip>div{display:flex;flex-direction:column;gap:2px;min-width:0}.creator-strip strong{font-size:14px;color:var(--ink)}.creator-strip small{font-size:12px;color:var(--muted)}
+.creator-badge{padding:6px 8px;border-radius:999px;background:#fff;color:var(--teal2);border:1px solid #cfe3dd;font-size:10px;font-weight:950;letter-spacing:.09em}
+
+.result-card{overflow:hidden;padding-bottom:58px}
+.result-card>*{position:relative;z-index:2}
+.result-card::before{content:"TREND RADIO";position:absolute;z-index:0;left:50%;top:48%;transform:translate(-50%,-50%) rotate(-18deg);font-size:clamp(38px,5.2vw,64px);font-weight:950;letter-spacing:.08em;white-space:nowrap;color:rgba(15,118,110,.045);pointer-events:none;user-select:none}
+.result-card::after{content:"트렌드라디오 제작 · 나의 복지 주머니";position:absolute;z-index:2;left:24px;right:24px;bottom:17px;padding-top:10px;border-top:1px solid #edf2f0;color:#7b8c8a;font-size:11px;font-weight:800;letter-spacing:-.01em;text-align:center;pointer-events:none;user-select:none}
+
+.summary-card{position:relative;overflow:hidden}.summary-card::before{content:"TREND RADIO";position:absolute;right:-16px;bottom:8px;transform:rotate(-10deg);font-size:28px;font-weight:950;letter-spacing:.08em;color:rgba(15,118,110,.035);pointer-events:none;user-select:none}.summary-card>*{position:relative;z-index:1}.summary-net::before{color:rgba(255,255,255,.08)}
+
+@media(max-width:620px){
+  .creator-strip{grid-template-columns:auto minmax(0,1fr);padding:12px 13px;margin-bottom:16px}.creator-badge{display:none}.creator-strip small{font-size:11px}.creator-monogram{width:34px;height:34px}
+  .result-card{padding-bottom:55px}.result-card::before{font-size:42px;top:50%;color:rgba(15,118,110,.04)}.result-card::after{left:17px;right:17px;bottom:15px;font-size:10.5px}
+}
